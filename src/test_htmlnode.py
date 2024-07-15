@@ -1,7 +1,7 @@
 import unittest
 
-from htmlnode import HTMLNode, ParentNode, LeafNode, text_node_to_html_node
-from textnode import TextNode
+from htmlnode import HTMLNode, ParentNode, LeafNode
+from textnode import TextNode, text_node_to_html_node
 
 class TestHTMLNode(unittest.TestCase):
     def test_eq(self):
@@ -20,7 +20,6 @@ class TestHTMLNode(unittest.TestCase):
                 LeafNode(None, "Normal text"),
             ],
         )
-        print(node5.to_html())
         
         
         
