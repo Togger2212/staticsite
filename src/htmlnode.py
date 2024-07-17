@@ -43,20 +43,25 @@ class ParentNode(HTMLNode):
     def __init__(self, tag, children, props=None):
         if not isinstance(children, list) or len(children) == 0:
             raise  ValueError("Children must be provided")
+        
         super().__init__(tag, props)
+
         self.children = children
 
     def to_html(self):
         if self.tag is None:
             raise ValueError("tag must be provided")
+        
         if self.children is None:
             raise ValueError("Parent needs Children!")
+        
         parent_string = f"<{self.tag}{self.props_to_html()}>"
         for child in self.children:
             parent_string += child.to_html()
         return parent_string + f"</{self.tag}>"
     
 
+  
 
         
         
